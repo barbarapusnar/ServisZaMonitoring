@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ElektrikaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ElektrikaModelStoreContainer">
+          <EntitySet Name="Meritve" EntityType="ElektrikaModel.Store.Meritve" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Meritve">
+          <Key>
+            <PropertyRef Name="ZapisID" />
+          </Key>
+          <Property Name="ZapisID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZapisČas" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="V1" Type="real" />
+          <Property Name="A1" Type="real" />
+          <Property Name="kW1" Type="real" />
+          <Property Name="V2" Type="real" />
+          <Property Name="A2" Type="real" />
+          <Property Name="kW2" Type="real" />
+          <Property Name="V3" Type="real" />
+          <Property Name="A3" Type="real" />
+          <Property Name="kW3" Type="real" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ElektrikaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ElektrikaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Meritve" EntityType="ElektrikaModel.Meritve" />
+        </EntityContainer>
+        <EntityType Name="Meritve">
+          <Key>
+            <PropertyRef Name="ZapisID" />
+          </Key>
+          <Property Name="ZapisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ZapisČas" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="V1" Type="Single" />
+          <Property Name="A1" Type="Single" />
+          <Property Name="kW1" Type="Single" />
+          <Property Name="V2" Type="Single" />
+          <Property Name="A2" Type="Single" />
+          <Property Name="kW2" Type="Single" />
+          <Property Name="V3" Type="Single" />
+          <Property Name="A3" Type="Single" />
+          <Property Name="kW3" Type="Single" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ElektrikaModelStoreContainer" CdmEntityContainer="ElektrikaEntities">
+          <EntitySetMapping Name="Meritve">
+            <EntityTypeMapping TypeName="ElektrikaModel.Meritve">
+              <MappingFragment StoreEntitySet="Meritve">
+                <ScalarProperty Name="ZapisID" ColumnName="ZapisID" />
+                <ScalarProperty Name="ZapisČas" ColumnName="ZapisČas" />
+                <ScalarProperty Name="V1" ColumnName="V1" />
+                <ScalarProperty Name="A1" ColumnName="A1" />
+                <ScalarProperty Name="kW1" ColumnName="kW1" />
+                <ScalarProperty Name="V2" ColumnName="V2" />
+                <ScalarProperty Name="A2" ColumnName="A2" />
+                <ScalarProperty Name="kW2" ColumnName="kW2" />
+                <ScalarProperty Name="V3" ColumnName="V3" />
+                <ScalarProperty Name="A3" ColumnName="A3" />
+                <ScalarProperty Name="kW3" ColumnName="kW3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
